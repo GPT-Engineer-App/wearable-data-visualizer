@@ -1,10 +1,13 @@
 import { Box, Flex, HStack, Link, IconButton, useDisclosure, Stack } from "@chakra-ui/react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link as RouterLink } from "react-router-dom"; // Import RouterLink
 
-const Links = ["Dashboard", "Profile", "Settings"];
+const Links = ["Dashboard", "Profile", "Settings", "Tasks"]; // Add "Tasks" to the links
 
 const NavLink = ({ children }) => (
   <Link
+    as={RouterLink} // Use RouterLink for navigation
+    to={children === "Tasks" ? "/tasks" : "#"} // Set the correct path for "Tasks"
     px={2}
     py={1}
     rounded={"md"}
